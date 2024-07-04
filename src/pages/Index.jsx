@@ -10,6 +10,11 @@ const Index = () => {
     destination: "",
     checkIn: "",
     checkOut: "",
+    departureLocation: "",
+    arrivalLocation: "",
+    departureDate: "",
+    returnDate: "",
+    passengers: 1,
   });
 
   const handleInputChange = (e) => {
@@ -25,26 +30,40 @@ const Index = () => {
         <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50">
           <div className="bg-white p-6 rounded-lg shadow-lg space-y-4">
             <Input
-              placeholder="Destination"
-              name="destination"
-              value={search.destination}
+              placeholder="Departure Location"
+              name="departureLocation"
+              value={search.departureLocation}
+              onChange={handleInputChange}
+            />
+            <Input
+              placeholder="Arrival Location"
+              name="arrivalLocation"
+              value={search.arrivalLocation}
               onChange={handleInputChange}
             />
             <Input
               type="date"
-              placeholder="Check-in Date"
-              name="checkIn"
-              value={search.checkIn}
+              placeholder="Departure Date"
+              name="departureDate"
+              value={search.departureDate}
               onChange={handleInputChange}
             />
             <Input
               type="date"
-              placeholder="Check-out Date"
-              name="checkOut"
-              value={search.checkOut}
+              placeholder="Return Date"
+              name="returnDate"
+              value={search.returnDate}
               onChange={handleInputChange}
             />
-            <Button>Search</Button>
+            <Input
+              type="number"
+              placeholder="Number of Passengers"
+              name="passengers"
+              value={search.passengers}
+              onChange={handleInputChange}
+              min="1"
+            />
+            <Button>Search Flights</Button>
           </div>
         </div>
       </section>
