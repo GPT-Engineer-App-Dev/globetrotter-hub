@@ -12,6 +12,7 @@ import { cn } from "@/lib/utils";
 import { CircleUser, Menu, Package2 } from "lucide-react";
 import { NavLink, Outlet } from "react-router-dom";
 import { navItems } from "../App";
+import Footer from "../components/Footer"; // Import Footer
 
 const Layout = () => {
   return (
@@ -24,6 +25,7 @@ const Layout = () => {
       <main className="flex-grow p-4 overflow-auto">
         <Outlet />
       </main>
+    <Footer /> {/* Add Footer */}
     </div>
   );
 };
@@ -83,6 +85,7 @@ const UserMenu = () => (
     <DropdownMenuContent align="end">
       <DropdownMenuLabel>My Account</DropdownMenuLabel>
       <DropdownMenuSeparator />
+      <DropdownMenuItem>Profile</DropdownMenuItem>
       <DropdownMenuItem>Settings</DropdownMenuItem>
       <DropdownMenuItem>Support</DropdownMenuItem>
       <DropdownMenuSeparator />
